@@ -84,11 +84,15 @@ INSTALLED_APPS = [
     "user",
     "blogs",
     "products",
-    "payments"
+    "payments",
+    "content_tools"
 ]
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+OPENAI_API_KEY = config("OPENAI_API_KEY")
+
 
 cloudinary.config(
     cloud_name=config("CLOUDINARY_CLOUD_NAME"),  # Changed from CLOUD_NAME
