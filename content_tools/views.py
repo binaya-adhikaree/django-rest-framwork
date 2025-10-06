@@ -16,13 +16,10 @@ class GenerateContentView(APIView):
         if not prompt:
             return Response({"error": "Prompt is required"}, status=400)
 
-        # Generate content using OpenAI
         result = generate_content(prompt)
 
-        # ✅ Assign user only if authenticated
         user = request.user if request.user.is_authenticated else None
 
-        # ✅ Save content
         content = GeneratedContent.objects.create(
             user=user,
             prompt=prompt,
