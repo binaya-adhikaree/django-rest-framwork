@@ -46,4 +46,4 @@ AI: OpenAI API
 
 Database: SQLite (default), can be switched to PostgreSQL/MySQL
 
-Frontend (Optional): React + TypeScript
+Frontend: React + TypeScript
